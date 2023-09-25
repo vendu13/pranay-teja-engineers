@@ -61,5 +61,3 @@ mongoose
     app.listen(config.port, config.host);
   })
   .catch((err) => console.error(`${err} did not connect`));
-
-app.listen(process.env.port || 6969);
