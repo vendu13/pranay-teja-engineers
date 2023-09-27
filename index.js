@@ -57,7 +57,7 @@ app.post(
 mongoose
   .connect(config.dbUri)
   .then(() => {
-    console.log("Connected to DB");
+    console.log("Connected to DB!");
     app.listen(config.port, config.host);
   })
   .catch((err) => console.error(`${err} did not connect`));
