@@ -22,6 +22,12 @@ const upload = multer({
   storage,
 });
 
+app.use(
+  cors({
+    origin: "https://pranay-teja-engineer-app.vercel.app/admin/login", // Replace with your Vercel URL
+  })
+);
+
 app.use(express.json());
 app.use(cors());
 app.use("/image", express.static(config.imageFolder));
