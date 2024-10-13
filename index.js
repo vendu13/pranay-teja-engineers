@@ -22,11 +22,14 @@ const upload = multer({
   storage,
 });
 
-app.use(
-  cors({
-    origin: "https://pranay-teja-engineer-app.vercel.app/admin/login", // Replace with your Vercel URL
-  })
-);
+const corsOptions = {
+  origin: "https://pranay-teja-engineer-app.vercel.app", // Vercel app URL
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Allow credentials if needed
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(cors());
